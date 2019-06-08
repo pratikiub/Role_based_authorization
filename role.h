@@ -28,7 +28,7 @@ class Role {
 		
 		int get_id();
 
-		bool add_resource_to_role(int rsc_id, std::set<Actions> rsc_set_ );
+		void add_resource_to_role(int rsc_id, std::set<Actions> rsc_set_ );
 
 		std::string get_desc();
 

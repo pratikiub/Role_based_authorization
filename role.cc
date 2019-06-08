@@ -13,28 +13,27 @@ int Role::get_id() {
 	return id_;
 }
 
-bool Role::add_resource_to_role(int rsc_id, std::set<Actions> rsc_set ) {
+void Role::add_resource_to_role(int rsc_id, std::set<Actions> rsc_set ) {
 	auto itr = resc_map_.find(rsc_id);
 	
 	//rsc alreay exists
 	if (itr != resc_map_.end()) {
-		//std::cout<<"case where resuorce already exists"<<std::endl;
+		//std::cout<<"case where resource already exists"<<std::endl;
 		auto& action_set = itr->second;
 		for(auto action: rsc_set) {
-
+			//std::cout<<"Lol"<<std::endl;
 			action_set.insert(action);
 		}
 	} else {
-		//std::cout<<"case where resuorce does not exists"<<std::endl;
+		//std::cout<<"case where resource does not exists"<<std::endl;
 		std::set<Actions> action_set;
 		for(auto action:  rsc_set) {
-			//std::cout<<"Lol"<<std::endl;
+			//std::cout<<"Bye"<<std::endl;
 			action_set.insert(action);
 		}
 
 		resc_map_.emplace(rsc_id, action_set);
 	}
-	return true;
 }
 
 void Role::print_role() {
