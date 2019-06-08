@@ -1,0 +1,10 @@
+How to compile ?
+
+From the directory run command:
+	make
+
+It will generate rbac1 output file rbac1
+
+How to run ?
+
+	./rbac1
