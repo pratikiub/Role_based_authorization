@@ -20,7 +20,7 @@ int main() {
 
 	std::vector<Query *> q_vec;
 
-	//Query* q1 = new Add_resource_to_role(role1, 1, action_set2);
+	Query* q1 = new Add_resource_to_role(role1, 1, action_set2);
 	Query* q2 = new Add_resource_to_role(role, 1, action_set);
 	Query* q3 = new Add_resource_to_role(role, 1, action_set1);
 	Query* q4 = new Add_role_to_user(usr, role);
@@ -30,7 +30,7 @@ int main() {
 	Query *q7 = new Validate_access_query(usr, rsc, DELETE);
 	Query *q8 = new Validate_access_query(usr, rsc, READ);
 
-	//q_vec.push_back(q1);
+	q_vec.push_back(q1);
 	q_vec.push_back(q2);
 	q_vec.push_back(q3);
 	q_vec.push_back(q4);
