@@ -1,8 +1,6 @@
 ## How to compile ?
-
-
-From the source directory run command:
- make
+From the source directory run command
+make
 
 It will generate rbac output file rbac1
 
