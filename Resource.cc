@@ -21,8 +21,8 @@ void Resource::change_name(std::string name) {
 	return;
 }
 
-bool Resource::delete_resource(int id) {
-	return true;
+void Resource::delete_resource(int id) {
+	return;
 }
 
 //opeartor overloading

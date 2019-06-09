@@ -7,10 +7,14 @@
 #include"user.h"
 #include"resource.h"
 #include"role.h"
+#include"datastore.h"
 
 class Query {
 	public:
 		virtual void execute() = 0;
+		virtual ~Query() {
+
+		}
 };
 
 class Validate_access_query : public Query {
@@ -25,45 +29,52 @@ class Validate_access_query : public Query {
 
 	 	void execute();
 
+	 	~Validate_access_query() {
+
+	 	}
 	private:
 		Resource*  rsc_;
 		User*  usr_;
 		Actions action_;
-
 };
 
 // This query adds resource along with permissions to
-
-class Add_resource_to_role : public Query {
+class Add_resource_to_role_query : public Query {
 	public:
-		Add_resource_to_role(Role * rol, int rsc_id, std::set<Actions> rsc_set) :
+		Add_resource_to_role_query(Role * rol, Resource* rsc, std::set<Actions> rsc_set) :
 			rol_(rol),
 			rsc_set_(rsc_set),
-			rsc_id_(rsc_id)
+			rsc_(rsc)
 		{
 
 		}
 
 		void execute();
+		~Add_resource_to_role_query() {
+
+		}
 
 	private:
 		Role* rol_;
 		std::set<Actions> rsc_set_;
-		int rsc_id_;
+		Resource* rsc_;
 };
 
 //This query adds roles to particular user
 
-class Add_role_to_user : public Query {
+class Add_role_to_user_query : public Query {
 	public:
-		Add_role_to_user(User * usr, Role * rol):
+
+		Add_role_to_user_query(User * usr, Role * rol):
 			usr_(usr),
 			rol_(rol)
 		{
 
 		}
 		void execute();
+		~Add_role_to_user_query() {
 
+		}	
 	private:
 		Role* rol_;
 		User* usr_;

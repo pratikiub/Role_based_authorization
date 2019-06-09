@@ -28,13 +28,9 @@ class Role {
 		
 		int get_id();
 
-		void add_resource_to_role(int rsc_id, std::set<Actions> rsc_set_ );
-
 		std::string get_desc();
 
-		void print_role();
-
-		void get_resc_permissions(int rsc_id, std::set<Actions>& action_set);
+			void print_role();
 
 		friend std::ostream & operator << (std::ostream & out, Role& rsc);
 

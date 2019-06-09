@@ -1,7 +1,7 @@
 C=g++
 CXXFLAGS= -std=c++11
 
-rbac1: main.o role.o resource.o user.o query.o 
+rbac: main.o role.o resource.o user.o query.o datastore.o 
 	g++ -o $@ $^
 
 main.o:	main.cc
@@ -17,7 +17,10 @@ user.o: user.cc
 	g++ -c -std=c++11 user.cc
 
 query.o: query.cc
-	g++ -c -std=c++11 query.cc	
+	g++ -c -std=c++11 query.cc
+
+datastore.o: datastore.cc
+	g++ -c -std=c++11 datastore.cc
 
 clean:
 	rm -f *.o

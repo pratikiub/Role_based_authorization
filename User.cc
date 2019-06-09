@@ -13,18 +13,6 @@ int User::get_id() {
 	return id_;
 }
 
-// bool User::get_role(Role *rol) {
-// 	bool ret = false;
-	
-// 	for(auto itr: role_vect_) {
-// 		if (*itr->get_id() == ) {
-
-// 		}
-// 	}
-
-// 	return ret;
-// }
-
 void User::add_role(Role *rol) {
 	role_vect_.push_back(rol);
 }

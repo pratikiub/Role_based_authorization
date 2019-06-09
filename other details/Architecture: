@@ -1,0 +1,32 @@
+##How to compile ?
+
+From the directory run command:
+	make
+
+It will generate rbac output file rbac1
+
+##How to run ?
+
+./rbac
+
+
+##Architecture or design:
+
+1) One query interface which will act as router to quries . Queries can be create new (user/role/resource) or validate_Access_writes of particular user on particular resource.
+	
+		Query_class(Interface)( execute method is pure virtual) ---> implemented by different types of queries like A
+
+
+
+2) One Singleton class for storing data this will avoid multile copies of data and in future it will to keep data managibiliy easier for example we want to delete resource we can remove resorce only after it is removed from map of role and resource.
+
+						Datastore singleton class {} --->  It will be acccessed by concrete Queries
+
+
+
+##Assumptions:
+
+1) No Hierarchy for User, Roles and Resources (Thery are random that dont have any realtionship between them like Admin has all the  permission of role deleter )
+
+2) Not considered race condition anywhere for example singlton class Datastore is not threadsafe.
+3) Deleting and updating entity is not implemented yet.

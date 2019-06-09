@@ -1,10 +1,14 @@
-How to compile ?
+##How to compile ?
 
 From the directory run command:
 	make
 
-It will generate rbac1 output file rbac1
+It will generate rbac output file rbac1
 
-How to run ?
+##How to run ?
 
-	./rbac1
+./rbac
+
+##How to clean?
+
+make clean

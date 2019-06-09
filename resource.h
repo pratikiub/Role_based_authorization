@@ -20,16 +20,13 @@ class Resource {
 
 	std::string get_desc();
 
-	//set desc
 	void set_desc(std::string);
 
 	friend std::ostream & operator << (std::ostream & out, Resource& rsc);
 
 	void change_name(std::string name);
 
-	bool delete_resource(int id);
-
-	~Resource();
+	void delete_resource(int id);
 
 	private:
 		std::string name_;
