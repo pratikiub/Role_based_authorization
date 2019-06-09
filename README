@@ -1,6 +1,6 @@
 ##How to compile ?
 
-From the directory run command:
+From the source directory run command:
 	make
 
 It will generate rbac output file rbac1
@@ -10,5 +10,4 @@ It will generate rbac output file rbac1
 ./rbac
 
 ##How to clean?
-
 make clean
